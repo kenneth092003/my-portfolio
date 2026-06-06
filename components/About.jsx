@@ -215,11 +215,13 @@ export default function About() {
             </div>
 
             <a
-              href="/resume.pdf"
+              href="/KenResume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="mt-8 inline-flex rounded-full border border-white/25 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-blue-600 transition hover:translate-y-[-1px] hover:bg-blue-50 hover:shadow-xl animate-slide-up"
               style={{ animationDelay: "300ms" }}
             >
-              Download Resume
+              View Resume
             </a>
           </div>
         </div>
