@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import Image from "next/image";
 
 const STORAGE_KEY = "hero-theme";
 
@@ -11,6 +12,70 @@ const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/kenneth092003", icon: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/kenneth-pasaje-b87286371/", icon: "linkedin" },
 ];
+
+const ASSET_LOGOS = {
+  HTML: "html-5.svg",
+  CSS: "css.svg",
+  JAVASCRIPT: "javascript.svg",
+  PHP: "php.svg",
+  PYTHON: "python.svg",
+  JAVA: "java.svg",
+  KOTLIN: "kotlin-icon.svg",
+  "REACT JS": "react.svg",
+  "REACT NATIVE": "react.svg",
+  "NEXT.JS": "nextjs-icon.svg",
+  LARAVEL: "laravel.svg",
+  DJANGO: "django-icon.svg",
+  "NODE.JS": "nodejs-icon.svg",
+  FLUTTER: "flutter.svg",
+  MYSQL: "mysql.svg",
+  "C#": "c-sharp.svg",
+  "VS CODE": "visual-studio-code.svg",
+  "ANDROID STUDIO": "android.svg",
+  GITHUB: "github-icon.svg",
+  FIGMA: "figma.svg",
+  FIREBASE: "firebase-icon.svg",
+  VERCEL: "vercel-icon.svg",
+  "GIT": "git-icon.svg",
+  CODEX: "codex-color.svg",
+  "TAILWIND": "tailwind-icon.svg",
+  "SUPABASE": "supabase-icon.svg",
+  CHATGPT: "openai-icon.svg",
+  TENSORFLOW: "tensorflow.svg",
+  EXPO: "expo-icon.svg",
+  CLAUDE: "claude-code.svg",
+};
+
+const CHIP_ACCENTS = {
+  HTML: "border-[#E34F26]/35 bg-[#E34F26]/12 shadow-[#E34F26]/15",
+  CSS: "border-[#264DE4]/35 bg-[#264DE4]/12 shadow-[#264DE4]/15",
+  JAVASCRIPT: "border-[#F7DF1E]/35 bg-[#F7DF1E]/14 shadow-[#F7DF1E]/15",
+  PHP: "border-[#777BB4]/35 bg-[#777BB4]/12 shadow-[#777BB4]/15",
+  PYTHON: "border-[#3776AB]/35 bg-[#3776AB]/12 shadow-[#3776AB]/15",
+  JAVA: "border-[#EA2D2E]/35 bg-[#EA2D2E]/12 shadow-[#EA2D2E]/15",
+  KOTLIN: "border-[#7F52FF]/35 bg-[#7F52FF]/12 shadow-[#7F52FF]/15",
+  "C#": "border-[#239120]/35 bg-[#239120]/12 shadow-[#239120]/15",
+  "REACT JS": "border-[#61DAFB]/35 bg-[#61DAFB]/12 shadow-[#61DAFB]/15",
+  "REACT NATIVE": "border-[#61DAFB]/35 bg-[#61DAFB]/12 shadow-[#61DAFB]/15",
+  "NEXT.JS": "border-slate-200/35 bg-white/10 shadow-black/10",
+  LARAVEL: "border-[#FF2D20]/35 bg-[#FF2D20]/12 shadow-[#FF2D20]/15",
+  DJANGO: "border-[#092E20]/35 bg-[#092E20]/12 shadow-[#092E20]/15",
+  "NODE.JS": "border-[#68A063]/35 bg-[#68A063]/12 shadow-[#68A063]/15",
+  FLUTTER: "border-[#02569B]/35 bg-[#02569B]/12 shadow-[#02569B]/15",
+  MYSQL: "border-[#00758F]/35 bg-[#00758F]/12 shadow-[#00758F]/15",
+  "ANDROID STUDIO": "border-[#3DDC84]/35 bg-[#3DDC84]/12 shadow-[#3DDC84]/15",
+  GITHUB: "border-slate-300/35 bg-slate-100/15 shadow-black/10",
+  GIT: "border-[#F05032]/35 bg-[#F05032]/12 shadow-[#F05032]/15",
+  FIGMA: "border-[#F24E1E]/35 bg-[#F24E1E]/12 shadow-[#A259FF]/10",
+  FIREBASE: "border-[#FFCA28]/35 bg-[#FFCA28]/14 shadow-[#FF9800]/12",
+  VERCEL: "border-slate-300/35 bg-white/10 shadow-black/10",
+  TAILWIND: "border-[#38BDF8]/35 bg-[#38BDF8]/12 shadow-[#38BDF8]/15",
+  SUPABASE: "border-[#3ECF8E]/35 bg-[#3ECF8E]/12 shadow-[#3ECF8E]/15",
+  CHATGPT: "border-[#10A37F]/35 bg-[#10A37F]/12 shadow-[#10A37F]/15",
+  TENSORFLOW: "border-[#FF6F00]/35 bg-[#FF6F00]/12 shadow-[#FF6F00]/15",
+  EXPO: "border-[#000000]/35 bg-white/10 shadow-black/10",
+  CLAUDE: "border-[#111111]/35 bg-[#111111]/12 shadow-black/10",
+};
 
 function getThemeSnapshot() {
   if (typeof window === "undefined") {
@@ -158,6 +223,15 @@ function SkillIcon({ name }) {
     "CANVA": (
       <svg viewBox="0 0 24 24" fill="#00C4CC"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
     ),
+    "ANDROID STUDIO": (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="5" y="6" width="10" height="12" rx="2.2" fill="#3DDC84" />
+        <path d="M15 8.5 19 5" stroke="#3DDC84" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M15 15.5 19 19" stroke="#3DDC84" strokeWidth="1.8" strokeLinecap="round" />
+        <circle cx="9.2" cy="11" r="0.7" fill="white" />
+        <circle cx="11.8" cy="11" r="0.7" fill="white" />
+      </svg>
+    ),
     "CODEX": (
       <svg viewBox="0 0 24 24" fill="#FF9900"><path d="M9.4 16.6L4.8 12l4.6-4.6L6.6 6 0 12l6.6 6 2.8-2.4zm5.2 0l4.6-4.6-4.6-4.6 2.8-2.8L24 12l-6.6 6 2.8 2.4z"/></svg>
     ),
@@ -175,6 +249,29 @@ function SkillIcon({ name }) {
   return iconMap[name] || "•";
 }
 
+function AssetIcon({ name }) {
+  const fileName = ASSET_LOGOS[name];
+
+  if (!fileName) {
+    return SkillIcon({ name });
+  }
+
+  return (
+    <Image
+      src={`/svg/${fileName}`}
+      alt=""
+      width={16}
+      height={16}
+      className="h-full w-full object-contain"
+      style={name === "CHATGPT" ? { filter: "brightness(0) invert(1)" } : undefined}
+    />
+  );
+}
+
+function chipAccent(name) {
+  return CHIP_ACCENTS[name] || "border-white/20 bg-white/10 shadow-black/10";
+}
+
 export default function About() {
   const theme = useSyncExternalStore(subscribeTheme, getThemeSnapshot, () => "light");
   const isDark = theme === "dark";
@@ -184,46 +281,58 @@ export default function About() {
     <section id="about" className={`min-h-screen px-6 py-20 sm:px-8 lg:px-10 scroll-mt-0 ${sectionClass}`}>
       <div className="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div className="flex flex-col justify-center gap-8 animate-fade-in">
-          <div className="space-y-6">
-            <p className="font-serif italic text-[clamp(2.6rem,6vw,5rem)] leading-none tracking-[-0.08em] text-white animate-slide-up">
-              About me
-            </p>
-            <p className="mt-10 max-w-2xl text-base leading-8 text-white/90 sm:text-lg animate-slide-up" style={{ animationDelay: "100ms" }}>
-              Information Technology student and graphic designer with experience in web and mobile development,
-              programming, and creative digital design. Skilled in combining technical expertise with visual creativity
-              to deliver innovative projects, collaborating across schools and organizations to produce high-quality
-              solutions.
-            </p>
+          <p className="font-serif italic text-[clamp(2.6rem,6vw,5rem)] leading-none tracking-[-0.08em] text-white animate-slide-up">
+            About me
+          </p>
 
-            <div className="mt-8 flex flex-wrap gap-3 animate-slide-up" style={{ animationDelay: "200ms" }}>
-              {SOCIAL_LINKS.map((item, index) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-lg hover:shadow-blue-500/50 animate-pop"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                  aria-label={item.label}
-                  title={item.label}
-                >
-                  <span className="h-5 w-5 group-hover:scale-110 transition-transform duration-300">
-                    <SocialIcon name={item.icon} />
-                  </span>
-                </a>
-              ))}
+          <div className="mx-auto w-full max-w-[260px] overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 p-2.5 shadow-[0_24px_60px_rgba(7,17,31,0.22)] backdrop-blur-md animate-slide-up" style={{ animationDelay: "60ms" }}>
+            <div className="overflow-hidden rounded-[1.4rem] border border-white/15 bg-white/10">
+              <Image
+                src="/gradpic.JPG"
+                alt="Kenneth Pasaje graduation photo"
+                width={360}
+                height={450}
+                priority
+                className="h-auto w-full object-cover object-top"
+              />
             </div>
-
-            <a
-              href="/KenResume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-8 inline-flex rounded-full border border-white/25 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-blue-600 transition hover:translate-y-[-1px] hover:bg-blue-50 hover:shadow-xl animate-slide-up"
-              style={{ animationDelay: "300ms" }}
-            >
-              View Resume
-            </a>
           </div>
+
+          <p className="max-w-2xl text-base leading-8 text-white/90 sm:text-lg animate-slide-up" style={{ animationDelay: "100ms" }}>
+            Information Technology student and graphic designer with experience in web and mobile development,
+            programming, and creative digital design. Skilled in combining technical expertise with visual creativity
+            to deliver innovative projects, collaborating across schools and organizations to produce high-quality
+            solutions.
+          </p>
+
+          <div className="flex flex-wrap gap-3 animate-slide-up" style={{ animationDelay: "200ms" }}>
+            {SOCIAL_LINKS.map((item, index) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-lg hover:shadow-blue-500/50 animate-pop"
+                style={{ animationDelay: `${index * 50}ms` }}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                aria-label={item.label}
+                title={item.label}
+              >
+                <span className="h-5 w-5 group-hover:scale-110 transition-transform duration-300">
+                  <SocialIcon name={item.icon} />
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <a
+            href="/resumeken.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-flex self-start rounded-full border border-white/25 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-blue-600 transition hover:translate-y-[-1px] hover:bg-blue-50 hover:shadow-xl animate-slide-up"
+            style={{ animationDelay: "300ms" }}
+          >
+            View Resume
+          </a>
         </div>
 
         <div className="flex flex-col gap-6 animate-fade-in" style={{ animationDelay: "200ms" }}>
@@ -284,11 +393,11 @@ export default function About() {
                   ].map((skill, index) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-white/90 transition-all duration-300 hover:border-white/50 hover:bg-white/20 hover:shadow-lg hover:shadow-blue-500/30 cursor-pointer animate-pop flex items-center gap-1.5"
+                      className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-lg cursor-pointer animate-pop flex items-center gap-1.5 ${chipAccent(skill)}`}
                       style={{ animationDelay: `${index * 30}ms` }}
                     >
-                      <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-white">
-                        {SkillIcon({ name: skill })}
+                      <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center">
+                        <AssetIcon name={skill} />
                       </span>
                       {skill}
                     </span>
@@ -302,20 +411,27 @@ export default function About() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     "VS CODE",
+                    "ANDROID STUDIO",
+                    "GIT",
                     "GITHUB",
                     "FIGMA",
+                    "TAILWIND",
+                    "SUPABASE",
                     "FIREBASE",
+                    "EXPO",
                     "VERCEL",
                     "PREMIERE PRO",
                     "CANVA",
                   ].map((tool, index) => (
                     <span
                       key={tool}
-                      className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-white/90 transition-all duration-300 hover:border-white/50 hover:bg-white/20 hover:shadow-lg hover:shadow-purple-500/30 cursor-pointer animate-pop flex items-center gap-1.5"
+                      className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-lg cursor-pointer animate-pop flex items-center gap-1.5 ${chipAccent(tool)}`}
                       style={{ animationDelay: `${index * 30}ms` }}
                     >
-                      <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-white">
-                        {SkillIcon({ name: tool })}
+                      <span
+                        className={`flex-shrink-0 flex items-center justify-center ${tool === "CHATGPT" ? "h-5 w-5 rounded-full bg-[#10A37F] p-0.5" : "h-4 w-4"}`}
+                      >
+                        <AssetIcon name={tool} />
                       </span>
                       {tool}
                     </span>
@@ -331,15 +447,15 @@ export default function About() {
                     "CODEX",
                     "CLAUDE",
                     "CHATGPT",
-                    "COPILOT",
+                    "TENSORFLOW",
                   ].map((tool, index) => (
                     <span
                       key={tool}
-                      className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-white/90 transition-all duration-300 hover:border-white/50 hover:bg-white/20 hover:shadow-lg hover:shadow-emerald-500/30 cursor-pointer animate-pop flex items-center gap-1.5"
+                      className={`rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-white/95 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-lg cursor-pointer animate-pop flex items-center gap-1.5 ${chipAccent(tool)}`}
                       style={{ animationDelay: `${index * 30}ms` }}
                     >
-                      <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center text-white">
-                        {SkillIcon({ name: tool })}
+                      <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center">
+                        <AssetIcon name={tool} />
                       </span>
                       {tool}
                     </span>
