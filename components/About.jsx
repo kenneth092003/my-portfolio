@@ -325,7 +325,7 @@ export default function About() {
           </div>
 
           <a
-            href="/resumeken.pdf"
+            href="/Kenneth.pdf"
             target="_blank"
             rel="noreferrer"
             className="mt-2 inline-flex self-start rounded-full border border-white/25 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-blue-600 transition hover:translate-y-[-1px] hover:bg-blue-50 hover:shadow-xl animate-slide-up"
